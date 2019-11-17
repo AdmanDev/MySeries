@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MySeries.Resources.Translate.en"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <!--MainWindow-->
+    <s:String x:Key="DeleteConfirm">Are you sure you want to delete this ?</s:String>
+    <s:String x:Key="DeleteCategoryConfirm">Are you sure you want to delete this category and its contents?</s:String>
+    <s:String x:Key="AddCategory">Add a category</s:String>
+    <s:String x:Key="NewCategoryName">Name of the new category :</s:String>
+    <s:String x:Key="EditCategoryMsg">Edit the category :</s:String>
+
+    <s:String x:Key="LoadOldSeries">Load series of old application version (1.1)"</s:String>
+    <s:String x:Key="Series">Series</s:String>
+    <s:String x:Key="AddSerie">Add a serie</s:String>
+    <s:String x:Key="Search">Search</s:String>
+    <s:String x:Key="SearchTitle">Search by title</s:String>
+    <s:String x:Key="SearchAuthor">Search by author</s:String>
+    <s:String x:Key="SearchGenre">Search by genre</s:String>
+    <s:String x:Key="SearchLanguage">Search by language</s:String>
+    <s:String x:Key="SearchState">Search by state</s:String>
+    <s:String x:Key="SearchRating">Rating less or equals...</s:String>
+    <s:String x:Key="SearchFavorites">Show favorites</s:String>
+    <s:String x:Key="Delete">Delete</s:String>
+    <s:String x:Key="Edit">Edit</s:String>
+    <s:String x:Key="Author">Author</s:String>
+    <s:String x:Key="ReleaseDate">Release date</s:String>
+    <s:String x:Key="Language">Language</s:String>
+    <s:String x:Key="State">State</s:String>
+    <s:String x:Key="NbEpisodes">Number of episodes</s:String>
+    
+    <!--AddSerie_Window-->
+    <s:String x:Key="EnterAllFields">Please enter all the fields !</s:String>
+
+    <s:String x:Key="Save">Save</s:String>
+    <s:String x:Key="ChooseImage">Choose an image...</s:String>
+    <s:String x:Key="InProgress">In progress</s:String>
+    <s:String x:Key="OnBreak">On break</s:String>
+    <s:String x:Key="Finished">Finished</s:String>
+
+</ResourceDictionary>

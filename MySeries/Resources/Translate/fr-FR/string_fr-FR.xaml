@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MySeries.Resources.Translate.fr"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    
+    <!--MainWindow-->
+    <s:String x:Key="DeleteConfirm">Voulez-vous vraiment supprimer cette fiche ?</s:String>
+    <s:String x:Key="DeleteCategoryConfirm">Voulez-vous vraiment supprimer cette catégorie et ses séries ?</s:String>
+    <s:String x:Key="AddCategory">Ajouter une catégorie</s:String>
+    <s:String x:Key="NewCategoryName">Nom de la nouvelle catégorie :</s:String>
+    <s:String x:Key="EditCategoryMsg">Modifier la catégorie :</s:String>
+
+    <s:String x:Key="LoadOldSeries">Charger les séries d'ancienne version (1.1)"</s:String>
+    <s:String x:Key="Series">Séries</s:String>
+    <s:String x:Key="AddSerie">Ajouter une série</s:String>
+    <s:String x:Key="Search">Rechercher</s:String>
+    <s:String x:Key="SearchTitle">Chercher une série</s:String>
+    <s:String x:Key="SearchAuthor">Chercher un auteur</s:String>
+    <s:String x:Key="SearchGenre">Chercher un genre</s:String>
+    <s:String x:Key="SearchLanguage">Chercher par langue</s:String>
+    <s:String x:Key="SearchState">Chercher par statut</s:String>
+    <s:String x:Key="SearchRating">Note inf ou égal à...</s:String>
+    <s:String x:Key="SearchFavorites">Afficher les favories</s:String>
+    <s:String x:Key="Delete">Supprimer</s:String>
+    <s:String x:Key="Edit">Modifier</s:String>
+    <s:String x:Key="Author">Auteur</s:String>
+    <s:String x:Key="ReleaseDate">Date de sortie</s:String>
+    <s:String x:Key="Language">Langue</s:String>
+    <s:String x:Key="State">Statut</s:String>
+    <s:String x:Key="NbEpisodes">Nombre d'épisodes</s:String>
+
+    <!--AddSerie_Window-->
+    <s:String x:Key="EnterAllFields">Entrez tous les champs !</s:String>
+    <s:String x:Key="Save">Enregistrer</s:String>
+    <s:String x:Key="ChooseImage">Choisir une image...</s:String>
+    <s:String x:Key="InProgress">En cours</s:String>
+    <s:String x:Key="OnBreak">En pause</s:String>
+    <s:String x:Key="Finished">Terminer</s:String>
+
+</ResourceDictionary>

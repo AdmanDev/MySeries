@@ -1,0 +1,213 @@
+﻿<Window x:Name="window" x:Class="MySeries.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MySeries"
+        xmlns:myC="clr-namespace:MyFunctions.ControlsWPF;assembly=MyFunctions"
+        mc:Ignorable="d"
+        Title="MySeries" Height="643" Width="696" SizeToContent="Width" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Loaded="Window_Loaded" DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}">
+    <Window.Resources>
+        
+        <Button x:Key="BT_AddCategory" x:Name="BT_AddCategory" Content="{DynamicResource AddCategory}" Background="{StaticResource MainButton}" BorderBrush="{StaticResource MainButtonBorderColor}" Foreground="White" FontWeight="Normal" Width="170" Height="25" Click="BT_AddCategory_Click"/>
+
+        <ContextMenu x:Key="SettingsMenu">
+            <MenuItem Header="Language">
+                <MenuItem Header="Français" Click="MN_French" />
+                <Separator/>
+                <MenuItem Header="English" Click="MN_English"/>
+            </MenuItem>
+            <Separator/>
+            <MenuItem  Header="Load series of old application version (1.1)" Click="MN_UpgradeSeriesFile"/>
+        </ContextMenu>
+
+        <ContextMenu x:Key="CategoriesMenu">
+            <MenuItem Name="MN_EditCategory" Header="{DynamicResource Edit}" Click="MN_EditCategory_Click"/>
+            <Separator/>
+            <MenuItem Name="MN_DeleteCategory" Header="{DynamicResource Delete}" Click="MN_DeleteCategory_Click"/>
+        </ContextMenu>
+
+    </Window.Resources>
+    
+    <Grid Background="{StaticResource WindowBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="606*"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="HeaderGrid" Height="38" VerticalAlignment="Top" Background="{StaticResource HeaderColor}" MouseLeftButtonDown="HeaderGrid_MouseLeftButtonDown" Grid.RowSpan="2">
+            <Image x:Name="IMG_AppIcon" Source="pack://application:,,,/Resources/Images/Icon/Icon PNG.png" HorizontalAlignment="Left" Width="28" Height="28" Margin="5,5,0,0" VerticalAlignment="Top" />
+            <Label x:Name="LB_AppName" Content="MySeries" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="43,0,0,0" VerticalAlignment="Top" Height="38" Foreground="White" FontSize="22" FontFamily="Franklin Gothic Demi"/>
+            <Button x:Name="BT_CloseApp" Width="36" VerticalAlignment="Top" Height="38" HorizontalAlignment="Right" Margin="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="BT_CloseApp_Click">
+                <Image Source="pack://application:,,,/Resources/Images/Headers/Close window.png"/>
+            </Button>
+            <Button x:Name="BT_Settings" ContextMenu="{DynamicResource SettingsMenu}" Width="41" VerticalAlignment="Top" Height="38" HorizontalAlignment="Right" Margin="0,0,44,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="BT_Settings_Click">
+       
+                    <Image Source="pack://application:,,,/Resources/Images/Headers/Logo Settings.png"/>
+            </Button>
+            <Button x:Name="BT_ADMANSoftware" Content="ADMAN Software-FR" Margin="293,2,167,3" Foreground="White" BorderBrush="White" FontSize="16" Click="BT_ADMANSoftware_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF5D0B0B" Offset="0"/>
+                        <GradientStop Color="#FF2E0202" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+        </Grid>
+        <GroupBox x:Name="Group_SeriesList" Header="{DynamicResource Series}" HorizontalAlignment="Left" Height="363" Margin="1,1,0,0" Grid.Row="1" VerticalAlignment="Top" Width="182" FontSize="16" Foreground="#FFFFFEFE" FontWeight="Bold">
+            <Grid >
+                <ListBox x:Name="LB_Series" HorizontalAlignment="Left" Height="275" Margin="0,30,0,0" VerticalAlignment="Top" Width="170" FontWeight="Normal" SelectionChanged="LB_Series_SelectionChanged"/>
+                <Button x:Name="BT_AddSerie" Content="{DynamicResource AddSerie}" Margin="0" Background="{StaticResource MainButton}" BorderBrush="{StaticResource MainButtonBorderColor}" Foreground="White" FontWeight="Normal" Click="BT_AddSerie_Click" VerticalAlignment="Bottom" MinHeight="26"/>
+                <ComboBox x:Name="CB_Categories" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Margin="0,3,0,0" FontWeight="Normal" SelectedIndex="0" SelectionChanged="CB_Categories_SelectionChanged">
+                    <ComboBox.ItemContainerStyle>
+                        <Style TargetType="ComboBoxItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                        </Style>
+                    </ComboBox.ItemContainerStyle>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="Group_Infos" Header="Infos" HorizontalAlignment="Left" Height="602" Margin="185,1,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="White" FontSize="16" Width="508" FontWeight="Bold">
+            <Grid >
+                <Label x:Name="LB_Title"  Content="{Binding SelectedItem.Title, ElementName=LB_Series}" HorizontalContentAlignment="Center" Margin="24,3,24,0" VerticalAlignment="Top" Foreground="White" FontSize="20" FontWeight="Bold" MinWidth="448" HorizontalAlignment="Center"/>
+                <Grid Margin="0,36,30,501" HorizontalAlignment="Center">
+                    <myC:ImageProgressBar Min="10" Max="10" Value="10" Image="pack://application:,,,/Resources/Images/UIs/Whit heart.png" HorizontalAlignment="Left" Margin="0"/>
+                    <myC:ImageProgressBar x:Name="IPB_Rating" Min="0" Max="10" Value="0" HorizontalAlignment="Left" Image="pack://application:,,,/Resources/Images/UIs/Heart.png" />
+                </Grid>
+                <Image x:Name="IMG_SeriePoster" HorizontalAlignment="Left" Height="304" Margin="6,77,0,0" VerticalAlignment="Top" Width="224" Stretch="Fill"/>
+
+                <StackPanel HorizontalAlignment="Left" Height="304" Margin="237,77,0,0" VerticalAlignment="Top" MinWidth="253">
+
+                    <Border BorderBrush="Black" BorderThickness="1" Height="50" Width="252">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="1" Height="48">
+                                <Label Content="{DynamicResource Author}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1"  Grid.Column="2" >
+                                <TextBlock x:Name="LB_Author" Text="{Binding SelectedItem.Author, ElementName=LB_Series}" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="Normal"/>
+                            </Border>
+
+                        </Grid>
+                    </Border>
+
+                    <Border BorderBrush="Black" BorderThickness="1" Height="50" Width="252">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="1" Height="48">
+                                <Label Content="{DynamicResource ReleaseDate}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1"  Grid.Column="2" >
+                                <TextBlock x:Name="LB_ReleaseDate" Text="{Binding SelectedItem.ReleaseDate, ElementName=LB_Series}" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="Normal"/>
+                            </Border>
+
+                        </Grid>
+                    </Border>
+
+                    <Border BorderBrush="Black" BorderThickness="1" Height="50" Width="252">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="1" Height="48">
+                                <Label Content="Genre" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1"  Grid.Column="2" >
+                                <TextBlock x:Name="LB_Genre" Text="{Binding SelectedItem.Genre, ElementName=LB_Series}" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="Normal"/>
+                            </Border>
+
+                        </Grid>
+                    </Border>
+
+                    <Border BorderBrush="Black" BorderThickness="1" Height="50" Width="252">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="1" Height="48">
+                                <Label Content="{DynamicResource Language}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1"  Grid.Column="2" >
+                                <TextBlock x:Name="LB_Languages" Text="{Binding SelectedItem.Language, ElementName=LB_Series}" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="Normal"/>
+                            </Border>
+
+                        </Grid>
+                    </Border>
+
+                    <Border BorderBrush="Black" BorderThickness="1" Height="50" Width="252">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="1" Height="48">
+                                <Label Content="{DynamicResource State}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1"  Grid.Column="2" >
+                                <TextBlock x:Name="LB_State" Text="{Binding SelectedItem.State, ElementName=LB_Series}" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="Normal"/>
+                            </Border>
+
+                        </Grid>
+                    </Border>
+
+                    <Border BorderBrush="Black" BorderThickness="1" Height="50" Width="252">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="1" Height="48">
+                                <TextBlock TextWrapping="Wrap" Text="{DynamicResource NbEpisodes}" TextAlignment="Center" FontWeight="Bold" Foreground="Black" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1"  Grid.Column="2" >
+                                <TextBlock x:Name="LB_NbEpisode" Text="{Binding SelectedItem.EpisodeNb, ElementName=LB_Series}" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="Normal"/>
+                            </Border>
+
+                        </Grid>
+                    </Border>
+
+
+                </StackPanel>
+                <GroupBox Header="Synopsis" Height="161" Margin="0,0,0,33" Width="496" BorderBrush="{x:Null}" BorderThickness="0.4,0.7,0.4,0.4" Foreground="Black" FontWeight="Bold" VerticalAlignment="Bottom">
+                    <TextBox x:Name="TB_Synopsis" TextAlignment="Justify" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="0" FontSize="14" FontWeight="Normal" UndoLimit="0"/>
+                </GroupBox>
+                <StackPanel Height="37"  VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="70,0,64,-3" Width="362">
+                    <Button x:Name="BT_DeleteSerie" Content="{DynamicResource Delete}" VerticalAlignment="Center" Width="170" Background="{StaticResource MainButton}" BorderBrush="{StaticResource MainButtonBorderColor}" Foreground="White" HorizontalAlignment="Left" Click="BT_DeleteSerie_Click" Margin="5,0" MinHeight="25"/>
+                    <Button x:Name="BT_EditSerie" Content="{DynamicResource Edit}" VerticalAlignment="Center" Width="170" Background="{StaticResource MainButton}" BorderBrush="{StaticResource MainButtonBorderColor}" Foreground="White" HorizontalAlignment="Left" Margin="0,0,5,0" Click="BT_EditSerie_Click" MinHeight="25"/>
+                </StackPanel>
+                <Button x:Name="BT_Favorite" Width="38" VerticalAlignment="Top" Height="38" HorizontalAlignment="Right" Margin="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="BT_Favorite_Click">
+                    <Image x:Name="IMG_Favorite" Source="pack://application:,,,/Resources/Images/UIs/Star - No favorite.png"/>
+                </Button>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="{DynamicResource Search}" HorizontalAlignment="Left" Height="234" Margin="0,0,0,3" Grid.Row="1" VerticalAlignment="Bottom" Width="183" FontSize="16" Foreground="White" FontWeight="Bold">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="171*"/>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="TB_Search" VerticalContentAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" FontWeight="Normal" TextChanged="TB_Search_TextChanged" />
+                <StackPanel Grid.Row="1" >
+                    <RadioButton x:Name="RB_FindTitle" Content="{DynamicResource SearchTitle}" Margin="0,4,0,0" Foreground="White" FontWeight="Normal" IsChecked="True" Checked="RB_FindTitle_Checked"/>
+                    <RadioButton x:Name="RB_FindAuthor" Content="{DynamicResource SearchAuthor}" Margin="0,4,0,0" Foreground="White" FontWeight="Normal" Checked="RB_FindAuthor_Checked"/>
+                    <RadioButton x:Name="RB_FindGenre" Content="{DynamicResource SearchGenre}" Margin="0,4,0,0" Foreground="White" FontWeight="Normal" Checked="RB_FindGenre_Checked"/>
+                    <RadioButton x:Name="RB_FindLanguage" Content="{DynamicResource SearchLanguage}" Margin="0,4,0,0" Foreground="White" FontWeight="Normal" Checked="RB_FindLanguage_Checked"/>
+                    <RadioButton x:Name="RB_FindState" Content="{DynamicResource SearchState}" Margin="0,4,0,0" Foreground="White" FontWeight="Normal" Checked="RB_FindState_Checked"/>
+                    <RadioButton x:Name="RB_FindRating" Content="{DynamicResource SearchRating}" Margin="0,4,0,0" Foreground="White" FontWeight="Normal" Checked="RB_FindRating_Checked"/>
+                    <RadioButton x:Name="RB_FindFavorite" Content="{DynamicResource SearchFavorites}" Margin="0,4,0,0" Foreground="White" FontWeight="Normal" Checked="RB_FindFavorite_Checked"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>
