@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="MySeries.AddSerie_Window" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="1.75" Width="3" />
+    <AssociationLine Name="serieToEdit" Type="MySeries.MSerie" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.781" Y="4.588" />
+        <Point X="12.781" Y="6.75" />
+        <Point X="9" Y="6.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAABCAAAAAKAAAAAAAAAIAAAIAAAAIAAgAAAA=</HashCode>
+      <FileName>AddSerie_Window.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="category" />
+      <Field Name="serieToEdit" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MySeries.Category">
+    <Position X="6.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAACAAIAAAAAAABAgACAAEAAAAAAAAAAgFAAA=</HashCode>
+      <FileName>Category.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="SeriesList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MySeries.Global">
+    <Position X="11.5" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Global.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="categoriesList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MySeries.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="2" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>IAAEBAEgAIIAOQAgYhQCCCoICCAAEYAEQAQgQ4QgAgE=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SelectedCategory" />
+      <Property Name="SelectedSerie" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Series" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="1.3" Collapsed="true" />
+  </Class>
+  <Class Name="MySeries.MSerie">
+    <Position X="7" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAASAAIAEgAiAoAAMAKAQBAEIEEABCABAAAAAA=</HashCode>
+      <FileName>MSerie.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MySeries.Properties.Settings">
+    <Position X="10" Y="7.5" Width="2.25" />
+    <AssociationLine Name="Default" Type="MySeries.Properties.Settings" ManuallyRouted="true">
+      <Path>
+        <Point X="10.789" Y="9.184" />
+        <Point X="10.789" Y="9.434" />
+        <Point X="11.477" Y="9.434" />
+        <Point X="11.477" Y="9.184" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.089" Y="0.081" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Default" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -13,10 +13,7 @@ namespace MySeries
         private BitmapImage noFavoriteImg;
         private BitmapImage favoriteImg;
         private ContextMenu categoriesMenu;
-        private Menu_ADMAN_SoftwareFR mn_adman = new Menu_ADMAN_SoftwareFR()
-        {
-            feature = @"https://admansoftware.wordpress.com/2017/04/14/myseries-fonctionnalite-a-venir/"
-        };
+        private WPF_ADMANMenu mn_adman = new WPF_ADMANMenu();
 
         private Category selectedCategory;
         private MSerie selectedSerie;
@@ -98,7 +95,7 @@ namespace MySeries
 
         private void ClearInfos()
         {
-            this.IPB_Rating.Value = 0;
+            this.RatingBar.Rate = 0;
             this.IMG_SeriePoster.Source = null;
             this.LB_Title.Content = null;
             this.LB_Author.Text = null;
@@ -159,8 +156,8 @@ namespace MySeries
             if (serie == null)
                 return;
 
-            this.IPB_Rating.Value = serie.Rating;
-            this.IMG_SeriePoster.Source = MyFunctions.WpfFunctions.BitmapToImageSource(serie.Poster);
+            this.RatingBar.Rate = serie.Rating;
+            this.IMG_SeriePoster.Source = WpfFunctions.BitmapToImageSource(serie.Poster);
             this.LB_Title.Content = serie.Title;
             this.LB_Author.Text = serie.Author;
             this.LB_ReleaseDate.Text = serie.ReleaseDate.ToString();
@@ -245,11 +242,11 @@ namespace MySeries
         //Add a new category
         private void BT_AddCategory_Click(object sender, RoutedEventArgs e)
         {
-            MyFunctions.ControlsWPF.InputBox ib = new MyFunctions.ControlsWPF.InputBox((string)App.LanguageResources["NewCategoryName"]);
+            MyFunctions.ControlsWPF.InputBox ib = new MyFunctions.ControlsWPF.InputBox((string)App.LanguageResources["NewCategoryName"], false);
 
             if(ib.ShowDialog() == true)
             {
-                if (ib.Value == "" || ib.Value == null)
+                if (string.IsNullOrEmpty(ib.Value))
                     return;
 
                 Category newCategory = new Category(ib.Value);
@@ -281,7 +278,7 @@ namespace MySeries
 
             if(cy != null)
             {
-                MyFunctions.ControlsWPF.InputBox ib = new MyFunctions.ControlsWPF.InputBox(App.LanguageResources["EditCategoryMsg"] +" " + categoryName);
+                MyFunctions.ControlsWPF.InputBox ib = new MyFunctions.ControlsWPF.InputBox(App.LanguageResources["EditCategoryMsg"] +" " + categoryName, false);
                 if (ib.ShowDialog() == true)
                 {
                     if (ib.Value == "")
@@ -444,14 +441,7 @@ namespace MySeries
         {
             this.BT_Settings.ContextMenu.IsOpen = true;
         }
-
-        private void MN_UpgradeSeriesFile(object sender, RoutedEventArgs e)
-        {
-            SelectedCategory.AddRange(Serie.Upgrade());
-            UpdateSeriesListVew(Series);
-            Category.Save();
-        }
-
+  
         private void SetLanguage(string _lang)
         {
             Properties.Settings.Default.Language = _lang;
@@ -477,7 +467,7 @@ namespace MySeries
 
         private void BT_ADMANSoftware_Click(object sender, RoutedEventArgs e)
         {
-            mn_adman.ShowMenu(System.Windows.Forms.Cursor.Position);
+            mn_adman.ShowMenu();
         }
     }
 }

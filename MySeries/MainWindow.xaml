@@ -4,11 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MySeries"
-        xmlns:myC="clr-namespace:MyFunctions.ControlsWPF;assembly=MyFunctions"
+        xmlns:rating="clr-namespace:Admandev.Rating;assembly=Admandev.Rating"
         mc:Ignorable="d"
         Title="MySeries" Height="643" Width="696" SizeToContent="Width" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Loaded="Window_Loaded" DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}">
     <Window.Resources>
-        
+
         <Button x:Key="BT_AddCategory" x:Name="BT_AddCategory" Content="{DynamicResource AddCategory}" Background="{StaticResource MainButton}" BorderBrush="{StaticResource MainButtonBorderColor}" Foreground="White" FontWeight="Normal" Width="170" Height="25" Click="BT_AddCategory_Click"/>
 
         <ContextMenu x:Key="SettingsMenu">
@@ -18,7 +18,6 @@
                 <MenuItem Header="English" Click="MN_English"/>
             </MenuItem>
             <Separator/>
-            <MenuItem  Header="Load series of old application version (1.1)" Click="MN_UpgradeSeriesFile"/>
         </ContextMenu>
 
         <ContextMenu x:Key="CategoriesMenu">
@@ -28,7 +27,7 @@
         </ContextMenu>
 
     </Window.Resources>
-    
+
     <Grid Background="{StaticResource WindowBackground}">
         <Grid.RowDefinitions>
             <RowDefinition Height="37*"/>
@@ -42,10 +41,10 @@
                 <Image Source="pack://application:,,,/Resources/Images/Headers/Close window.png"/>
             </Button>
             <Button x:Name="BT_Settings" ContextMenu="{DynamicResource SettingsMenu}" Width="41" VerticalAlignment="Top" Height="38" HorizontalAlignment="Right" Margin="0,0,44,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="BT_Settings_Click">
-       
-                    <Image Source="pack://application:,,,/Resources/Images/Headers/Logo Settings.png"/>
+
+                <Image Source="pack://application:,,,/Resources/Images/Headers/Logo Settings.png"/>
             </Button>
-            <Button x:Name="BT_ADMANSoftware" Content="ADMAN Software-FR" Margin="293,2,167,3" Foreground="White" BorderBrush="White" FontSize="16" Click="BT_ADMANSoftware_Click">
+            <Button x:Name="BT_ADMANSoftware" Content="ADMANDEV" Margin="293,2,167,3" Foreground="White" BorderBrush="White" FontSize="16" Click="BT_ADMANSoftware_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF5D0B0B" Offset="0"/>
@@ -71,9 +70,15 @@
         <GroupBox x:Name="Group_Infos" Header="Infos" HorizontalAlignment="Left" Height="602" Margin="185,1,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="White" FontSize="16" Width="508" FontWeight="Bold">
             <Grid >
                 <Label x:Name="LB_Title"  Content="{Binding SelectedItem.Title, ElementName=LB_Series}" HorizontalContentAlignment="Center" Margin="24,3,24,0" VerticalAlignment="Top" Foreground="White" FontSize="20" FontWeight="Bold" MinWidth="448" HorizontalAlignment="Center"/>
-                <Grid Margin="0,36,30,501" HorizontalAlignment="Center">
-                    <myC:ImageProgressBar Min="10" Max="10" Value="10" Image="pack://application:,,,/Resources/Images/UIs/Whit heart.png" HorizontalAlignment="Left" Margin="0"/>
-                    <myC:ImageProgressBar x:Name="IPB_Rating" Min="0" Max="10" Value="0" HorizontalAlignment="Left" Image="pack://application:,,,/Resources/Images/UIs/Heart.png" />
+                <Grid Margin="0,36,0,0">
+                    <rating:Rating Name="RatingBar" SymbolType="Heart" SymbolsCount="10" NormalSymbolColor="White" SymbolSize="39" ReadOnly="True" HorizontalAlignment="Center">
+                        <rating:Rating.SelectedSymbolColor>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0"/>
+                                <GradientStop Color="Red" Offset="0.53"/>
+                            </LinearGradientBrush>
+                        </rating:Rating.SelectedSymbolColor>
+                    </rating:Rating>
                 </Grid>
                 <Image x:Name="IMG_SeriePoster" HorizontalAlignment="Left" Height="304" Margin="6,77,0,0" VerticalAlignment="Top" Width="224" Stretch="Fill"/>
 

@@ -10,10 +10,10 @@ using System.Windows;
 [assembly: AssemblyTitle("MySeries")]
 [assembly: AssemblyDescription("MySeries est un logiciel permettant de créer sa bibliothèque de films ou séries.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("ADMAN Software-FR")]
+[assembly: AssemblyCompany("Admandev")]
 [assembly: AssemblyProduct("MySeries")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
-[assembly: AssemblyTrademark("ADMAN Software-FR")]
+[assembly: AssemblyTrademark("Admandev")]
 [assembly: AssemblyCulture("")]
 
 // L'affectation de la valeur false à ComVisible rend les types invisibles dans cet assembly
@@ -51,5 +51,5 @@ using System.Windows;
 // Vous pouvez spécifier toutes les valeurs ou indiquer les numéros de build et de révision par défaut
 // en utilisant '*', comme indiqué ci-dessous :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.0.7")]
-[assembly: AssemblyFileVersion("2.0.0.7")]
+[assembly: AssemblyVersion("2.2.1.0")]
+[assembly: AssemblyFileVersion("2.2.1.0")]

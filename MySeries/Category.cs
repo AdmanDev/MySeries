@@ -69,26 +69,12 @@ namespace MySeries
 
         public static List<Category> Open()
         {
-            List<Category> result = new List<Category>();
-            bool ok = true;
-
-            if (File.Exists(savePath))
-            {
-                result = MyFunctions.Functions.Deserialize<List<Category>>(savePath);
-            }
-            else
-            {
-                ok = false;
-            }
-
+            List<Category> result = MyFunctions.FileManager.Deserialize<List<Category>>(savePath);
+           
+            //Si la liste contient aucune catégorie, on en ajoutera une par défaut
             if (result.Count <= 0)
             {
                 result.Add(new Category("Series", new List<MSerie>()));
-            }
-
-            if (!ok)
-            {
-                result[0].AddRange(Serie.UpgradeFile());
             }
 
             return result;
@@ -96,7 +82,7 @@ namespace MySeries
 
         public static void Save()
         {
-            MyFunctions.Functions.Serialize<List<Category>>(savePath, Global.categoriesList);
+            MyFunctions.FileManager.Serialize<List<Category>>(savePath, Global.categoriesList);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace MySeries
 
             SetAppLanguage(MySeries.Properties.Settings.Default.Language);
 
-            Functions.CheckUpdate("https://admansoftware.wordpress.com/2017/04/14/myseries/");
+            UpdateManager.CheckUpdate();
         }
 
         public static void SetAppLanguage(string lang)

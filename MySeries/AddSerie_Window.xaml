@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MySeries"
         xmlns:mf="clr-namespace:MyFunctions.ControlsWPF;assembly=MyFunctions"
+        xmlns:rating="clr-namespace:Admandev.Rating;assembly=Admandev.Rating"
         mc:Ignorable="d"
         Title="Editeur " Height="637.886" Width="667.783" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="{StaticResource WindowBackground}">
@@ -19,11 +20,16 @@
         <GroupBox x:Name="Group_Infos" Header="Infos" HorizontalAlignment="Left" Height="602" Margin="7,32,0,-80" VerticalAlignment="Top" Foreground="White" FontSize="16" Width="653" FontWeight="Bold">
             <Grid >
                 <TextBox x:Name="TB_Name" HorizontalContentAlignment="Center" Margin="24,3,24,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" MinWidth="448"/>
-                <Grid Margin="50,36,151,501" HorizontalAlignment="Center">
-                    <mf:ImageProgressBar Min="10" Max="10" Value="10" Image="pack://application:,,,/Resources/Images/UIs/Whit heart.png" HorizontalAlignment="Left" Margin="0"/>
-                    <mf:ImageProgressBar x:Name="IPB_Rating" Min="0" Max="10" Value="0" HorizontalAlignment="Left" Image="pack://application:,,,/Resources/Images/UIs/Heart.png" />
+                <Grid Margin="0,36,0,0" HorizontalAlignment="Center">
+                    <rating:Rating Name="RatingBar" SymbolType="Heart" SymbolsCount="10" NormalSymbolColor="White" SymbolSize="39" LockAfterRating="False" HorizontalAlignment="Center">
+                        <rating:Rating.SelectedSymbolColor>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0"/>
+                                <GradientStop Color="Red" Offset="0.53"/>
+                            </LinearGradientBrush>
+                        </rating:Rating.SelectedSymbolColor>
+                    </rating:Rating>
                 </Grid>
-                <mf:NumericUpDown x:Name="NUD_Rating"  Margin="0,36,65,503" HorizontalAlignment="Right" Width="65" FontWeight="Normal" ValueChanged="NUD_Rating_ValueChanged" />
 
                 <Border  BorderThickness="1" BorderBrush="Black" Margin="0,77,409,203">
                     <Grid>
@@ -64,7 +70,7 @@
                                 <Label Content="{DynamicResource ReleaseDate}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
                             </Border>
                             <Border BorderBrush="Black" BorderThickness="1"  Grid.Column="2" >
-                                <mf:NumericUpDown x:Name="NUD_ReleaseDate" Margin="0,4,0,5" FontWeight="Normal" MaxValue="1E+36" MinValue="1900" Value="2000" />
+                                <mf:NumericUpDown x:Name="NUD_ReleaseDate" Margin="0,4,0,5" FontWeight="Normal" Max="1E+36" Min="1900" Value="2000" />
                             </Border>
 
                         </Grid>
@@ -135,7 +141,7 @@
                                 <TextBlock TextWrapping="Wrap" Text="{DynamicResource NbEpisodes}" TextAlignment="Center" FontWeight="Bold" Foreground="Black" VerticalAlignment="Center"/>
                             </Border>
                             <Border BorderBrush="Black" BorderThickness="1"  Grid.Column="2" >
-                                <mf:NumericUpDown x:Name="NUD_NbEpisode" Margin="0,4,0,5" FontWeight="Normal" MaxValue="1E+36" MinValue="1" />
+                                <mf:NumericUpDown x:Name="NUD_NbEpisode" Margin="0,4,0,5" FontWeight="Normal" Max="1E+36" Min="1" />
                             </Border>
 
                         </Grid>

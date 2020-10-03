@@ -40,8 +40,12 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MyFunctions">
-      <HintPath>..\..\..\..\..\..\..\Bibliotheque\Documents\Visual Studio 2017\Projects Visual Studio\C#\MyFunctions\MyFunctions\bin\Debug\MyFunctions.dll</HintPath>
+    <Reference Include="Admandev.Rating">
+      <HintPath>..\..\CONTRÔLES WPF\Admandev.Rating\Admandev.Rating\bin\Release\Admandev.Rating.dll</HintPath>
+    </Reference>
+    <Reference Include="MyFunctions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MyFunctions\MyFunctions\bin\Release\MyFunctions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -73,7 +77,6 @@
     <Compile Include="Category.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="MSerie.cs" />
-    <Compile Include="Serie.cs" />
     <Page Include="AddSerie_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,6 +125,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="AdmanKey.pfx" />
+    <None Include="ClassDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

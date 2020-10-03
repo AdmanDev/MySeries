@@ -56,3 +56,30 @@ D:\Session\Bibliotheque\Documents\Visual Studio 2017\Projects Visual Studio\C#\M
 D:\Session\Bibliotheque\Documents\Visual Studio 2017\Projects Visual Studio\C#\MySeries\MySeries\obj\Debug\MySeries.pdb
 D:\Session\Bibliotheque\Documents\Visual Studio 2017\Projects Visual Studio\C#\MySeries\MySeries\obj\Debug\Resources\Translate\en-US\string_en-US.baml
 D:\Session\Bibliotheque\Documents\Visual Studio 2017\Projects Visual Studio\C#\MySeries\MySeries\obj\Debug\Resources\Translate\fr-FR\string_fr-FR.baml
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\bin\Debug\MySeries.exe.config
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\bin\Debug\MySeries.exe
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\bin\Debug\MySeries.pdb
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\bin\Debug\System.Management.Automation.dll
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\bin\Debug\MyFunctions.pdb
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\AddSerie_Window.g.cs
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\MainWindow.g.cs
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\App.g.cs
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\MySeries_MarkupCompile.cache
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\MySeries_MarkupCompile.lref
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\App.baml
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\AddSerie_Window.baml
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\MainWindow.baml
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\Resources\Translate\en-US\string_en-US.baml
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\Resources\Translate\fr-FR\string_fr-FR.baml
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\Style.baml
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\MySeries.g.resources
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\MySeries.Properties.Resources.resources
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\MySeries.csproj.GenerateResource.cache
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\MySeries.csproj.CopyComplete
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\MySeries.exe
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\MySeries.pdb
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\bin\Debug\MyFunctions.dll
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\bin\Debug\Microsoft.Expression.Drawing.dll
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\bin\Debug\Admandev.Rating.dll
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\bin\Debug\Admandev.Rating.pdb
+D:\Session\Bibliotheque\Documents\Visual Studio 2019\Projets Visual-Studio\C#\MySeries\MySeries\obj\Debug\MySeries.csproj.CoreCompileInputs.cache

@@ -40,7 +40,7 @@ namespace MySeries
             serieToEdit = _serieToEdit;
 
             this.TB_Name.Text = _serieToEdit.Title;
-            this.NUD_Rating.Value = _serieToEdit.Rating;
+            this.RatingBar.Rate = _serieToEdit.Rating;
             this.TB_Author.Text = _serieToEdit.Author;
             this.NUD_ReleaseDate.Value = _serieToEdit.ReleaseDate;
             this.TB_Genre.Text = _serieToEdit.Genre;
@@ -61,11 +61,6 @@ namespace MySeries
         private void BT_CloseWindow_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-
-        private void NUD_Rating_ValueChanged(float obj)
-        {
-            this.IPB_Rating.Value = (int)obj;
         }
 
         //Choose poster
@@ -97,7 +92,7 @@ namespace MySeries
                 poster = MyFunctions.WpfFunctions.BitmapImageToBitmap((BitmapImage)this.IMG_Poster.Source);
             }
 
-            MSerie serie = new MSerie(this.TB_Name.Text, this.TB_Author.Text, this.TB_Genre.Text, this.CB_Language.Text, this.CB_State.Text, this.TB_Synopsis.Text, (int)this.NUD_NbEpisode.Value, (int)this.NUD_ReleaseDate.Value, (int)this.NUD_Rating.Value, poster, false);
+            MSerie serie = new MSerie(this.TB_Name.Text, this.TB_Author.Text, this.TB_Genre.Text, this.CB_Language.Text, this.CB_State.Text, this.TB_Synopsis.Text, (int)this.NUD_NbEpisode.Value, (int)this.NUD_ReleaseDate.Value, (int)this.RatingBar.Rate, poster, false);
 
             if (editMode)
             {// Edit the serie
